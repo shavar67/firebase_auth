@@ -1,3 +1,4 @@
 #### Firebase Auth
 
-   firebase authentication project
+creating a demo application with user authentication
+   
