@@ -5,18 +5,14 @@ name: Flutter CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [master]
+    branches: [master, features]
     paths-ignore:
       - '**/README.md'
   pull_request:
-    branches: [master]
+    branches: [master, features]
 
   # Allows you to run this workflow manually from the Actions tab
-# workflow_dispatch:
-
-     
-    
-# on: push    # Default will running for every branch.
+  # workflow_dispatch:
     
 jobs:
   test-analyze:
@@ -40,7 +36,8 @@ jobs:
     - run: flutter pub get
     
     # Statically analyze the Dart code for any errors.
-    - run: flutter analyze .
+    - run: flutter analyze 
+    - run: flutter build
     
     # Run widget tests for our flutter project.
    # - run: flutter test
