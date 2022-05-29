@@ -53,10 +53,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (MaterialApp(
-        theme: appTheme.light,
+        theme: appTheme.dark,
         darkTheme: appTheme.dark,
         themeMode: ThemeMode.dark,
-        debugShowCheckedModeBanner: true,
+        debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRouter.generateRoute,
         initialRoute: authRoute,
         builder: EasyLoading.init(),
