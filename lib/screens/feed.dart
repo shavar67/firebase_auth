@@ -41,7 +41,7 @@ class _HomeFeedState extends State<HomeFeed> {
                 child: const Icon(Icons.logout))
           ],
           title: Consumer(
-            builder: (BuildContext context, value, _) {
+            builder: (BuildContext context, _, __) {
               return Text(
                 '${_firebaseUser?.email}',
                 style: const TextStyle(),
