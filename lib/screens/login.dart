@@ -66,7 +66,7 @@ class _LoginWidgetState extends State<LoginWidget> {
 
     return Scaffold(
       key: _scaffoldKey,
-      appBar: AppBar(title: const Text('FireCast')),
+      appBar: AppBar(title: const Text('Authentication')),
       body: Form(
         key: _formkey,
         child: SizedBox(
