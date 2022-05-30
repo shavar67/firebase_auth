@@ -65,6 +65,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     final _authService = context.watch<AuthService>();
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: _scaffoldKey,
       appBar: AppBar(title: const Text('Authentication')),
       body: Form(
@@ -75,6 +76,8 @@ class _LoginWidgetState extends State<LoginWidget> {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisSize: MainAxisSize.max,
               children: [
                 const SizedBox(
                     height: 200,
@@ -110,7 +113,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       )),
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -132,19 +135,24 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 30),
-                const Spacer(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('Don\'t have an account?'),
-                    TextButton(
-                        onPressed: () async {
-                          Navigator.of(context)
-                              .pushReplacementNamed(signUpRoute);
-                        },
-                        child: const Text('Register')),
-                  ],
+                Expanded(
+                  flex: 2,
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Don\'t have an account?'),
+                        TextButton(
+                            onPressed: () async {
+                              Navigator.of(context)
+                                  .pushReplacementNamed(signUpRoute);
+                            },
+                            child: const Text('Register')),
+                      ],
+                    ),
+                  ),
                 )
               ],
             ),
